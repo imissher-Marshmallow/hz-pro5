@@ -1,0 +1,203 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&display=swap');
+
+:root {
+    --primary-color: #f2726a;
+    --bg-dark-rgba: rgba(15, 15, 15, 0.85);
+    --text-main: #fff;
+    --text-muted: #aaa;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Nunito Sans', sans-serif;
+}
+
+body {
+    height: 100vh;
+    background: url('https://github.com/imissher-Marshmallow/VIDEO/blob/main/cherry-blossoms_FHD.jpg?raw=true.') no-repeat center center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; 
+}
+
+.card {
+    width: 320px;
+    padding: 30px;
+    border-radius: 20px; 
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(10px); 
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5); 
+    transition: all 0.4s ease;
+    z-index: 10;
+}
+
+.card.hidden {
+    opacity: 0;
+    transform: scale(0.9) translateY(20px);
+    pointer-events: none;
+}
+
+.card__img {
+    width: 130px;
+    height: 130px;
+    margin: 0 auto 20px;
+    border-radius: 50%;
+    border: 5px solid var(--primary-color);
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(242, 114, 106, 0.3);
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+h2 {
+    color: var(--text-main);
+    font-size: 26px;
+    margin-bottom: 5px;
+}
+
+p {
+    color: var(--primary-color);
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.card__social {
+    margin: 25px 0 30px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.card__social a {
+    text-decoration: none;
+    color: var(--text-main);
+    font-size: 22px;
+    transition: 0.3s;
+}
+
+.card__social a:hover {
+    color: var(--primary-color);
+    transform: translateY(-3px);
+}
+
+button#openModalBtn {
+    outline: none;
+    background: transparent;
+    border: 2px solid var(--primary-color);
+    color: var(--text-main);
+    padding: 12px 28px;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button#openModalBtn:hover {
+    background-color: var(--primary-color);
+    box-shadow: 0 5px 15px rgba(242, 114, 106, 0.4);
+}
+
+.modal {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease;
+    z-index: 100;
+}
+
+.modal.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.modal-content {
+    background-color: var(--bg-dark-rgba);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    color: var(--text-main);
+    padding: 40px;
+    border-radius: 20px;
+    width: 90%;
+    max-width: 700px;
+    position: relative;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.6);
+    transform: translateY(30px);
+    transition: transform 0.4s ease-out;
+}
+
+.modal.active .modal-content {
+    transform: translateY(0);
+}
+
+.close-button {
+    color: var(--text-muted);
+    font-size: 30px;
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.close-button:hover {
+    color: var(--primary-color);
+}
+
+.modal-body h2 {
+    text-align: left;
+    font-size: 28px;
+    margin-bottom: 25px;
+}
+
+.project-item ul {
+    list-style: none;
+}
+
+.project-item ul li {
+    margin-bottom: 12px;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #eee;
+    position: relative;
+    padding-left: 25px;
+}
+
+.project-item ul li::before {
+    content: "•";
+    color: var(--primary-color);
+    position: absolute;
+    left: 0;
+    font-size: 1.2em;
+}
+
+#emailModal .modal-content {
+    max-width: 500px; 
+    padding: 30px 40px;
+}
+
+.email-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 15px 20px;
+    border-radius: 12px;
+}

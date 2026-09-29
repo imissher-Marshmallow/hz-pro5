@@ -1,10 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&display=swap');
 
 :root {
-    --primary-color: #f2726a;
-    --bg-dark-rgba: rgba(15, 15, 15, 0.85);
-    --text-main: #fff;
-    --text-muted: #aaa;
+    --ctp-base: #1e1e2e;
+    --ctp-mantle: #181825;
+    --ctp-crust: #11111b;
+    --ctp-surface0: #313244;
+    --ctp-surface1: #45475a;
+    --ctp-text: #cdd6f4;
+    --ctp-subtext0: #a6adc8;
+    --ctp-accent: #cba6f7; 
+    --ctp-accent-hover: #b4befe;
 }
 
 * {
@@ -16,7 +21,7 @@
 
 body {
     height: 100vh;
-    background: url('https://raw.githubusercontent.com/imissher-Marshmallow/hz-pro5/main/cherry-blossoms_FHD.jpg');
+    background-color: var(--ctp-base);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -28,11 +33,11 @@ body {
     padding: 30px;
     border-radius: 20px; 
     text-align: center;
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(24, 24, 37, 0.75);
     backdrop-filter: blur(10px); 
     -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.5); 
+    border: 1px solid var(--ctp-surface0);
+    box-shadow: 0 10px 25px rgba(17, 17, 27, 0.6); 
     transition: all 0.4s ease;
     z-index: 10;
 }
@@ -48,9 +53,9 @@ body {
     height: 130px;
     margin: 0 auto 20px;
     border-radius: 50%;
-    border: 5px solid var(--primary-color);
+    border: 5px solid var(--ctp-accent);
     overflow: hidden;
-    box-shadow: 0 5px 15px rgba(242, 114, 106, 0.3);
+    box-shadow: 0 5px 15px rgba(203, 166, 247, 0.3);
 }
 
 img {
@@ -60,13 +65,13 @@ img {
 }
 
 h2 {
-    color: var(--text-main);
+    color: var(--ctp-text);
     font-size: 26px;
     margin-bottom: 5px;
 }
 
 p {
-    color: var(--primary-color);
+    color: var(--ctp-accent);
     font-size: 16px;
     font-weight: 600;
 }
@@ -80,21 +85,21 @@ p {
 
 .card__social a {
     text-decoration: none;
-    color: var(--text-main);
+    color: var(--ctp-text);
     font-size: 22px;
     transition: 0.3s;
 }
 
 .card__social a:hover {
-    color: var(--primary-color);
+    color: var(--ctp-accent);
     transform: translateY(-3px);
 }
 
 button#openModalBtn {
     outline: none;
     background: transparent;
-    border: 2px solid var(--primary-color);
-    color: var(--text-main);
+    border: 2px solid var(--ctp-accent);
+    color: var(--ctp-text);
     padding: 12px 28px;
     border-radius: 30px;
     font-size: 16px;
@@ -104,14 +109,15 @@ button#openModalBtn {
 }
 
 button#openModalBtn:hover {
-    background-color: var(--primary-color);
-    box-shadow: 0 5px 15px rgba(242, 114, 106, 0.4);
+    background-color: var(--ctp-accent);
+    color: var(--ctp-crust);
+    box-shadow: 0 5px 15px rgba(203, 166, 247, 0.4);
 }
 
 .modal {
     position: fixed;
     inset: 0;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(17, 17, 27, 0.7);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -127,17 +133,17 @@ button#openModalBtn:hover {
 }
 
 .modal-content {
-    background-color: var(--bg-dark-rgba);
+    background-color: rgba(30, 30, 46, 0.85);
     backdrop-filter: blur(15px);
     -webkit-backdrop-filter: blur(15px);
-    color: var(--text-main);
+    color: var(--ctp-text);
     padding: 40px;
     border-radius: 20px;
     width: 90%;
     max-width: 700px;
     position: relative;
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    box-shadow: 0 15px 35px rgba(0,0,0,0.6);
+    border: 1px solid var(--ctp-surface0);
+    box-shadow: 0 15px 35px rgba(17, 17, 27, 0.8);
     transform: translateY(30px);
     transition: transform 0.4s ease-out;
 }
@@ -147,7 +153,7 @@ button#openModalBtn:hover {
 }
 
 .close-button {
-    color: var(--text-muted);
+    color: var(--ctp-subtext0);
     font-size: 30px;
     position: absolute;
     top: 15px;
@@ -157,7 +163,7 @@ button#openModalBtn:hover {
 }
 
 .close-button:hover {
-    color: var(--primary-color);
+    color: var(--ctp-accent);
 }
 
 .modal-body h2 {
@@ -174,14 +180,14 @@ button#openModalBtn:hover {
     margin-bottom: 12px;
     font-size: 16px;
     line-height: 1.6;
-    color: #eee;
+    color: var(--ctp-text);
     position: relative;
     padding-left: 25px;
 }
 
 .project-item ul li::before {
     content: "•";
-    color: var(--primary-color);
+    color: var(--ctp-accent);
     position: absolute;
     left: 0;
     font-size: 1.2em;
@@ -197,7 +203,7 @@ button#openModalBtn:hover {
     align-items: center;
     justify-content: center;
     gap: 15px;
-    background-color: rgba(255, 255, 255, 0.05);
+    background-color: var(--ctp-surface0);
     padding: 15px 20px;
     border-radius: 12px;
 }
